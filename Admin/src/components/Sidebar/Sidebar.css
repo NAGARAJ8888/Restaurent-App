@@ -1,34 +1,79 @@
-.sidebar{
+.sidebar {
+    width: 18%;
+    min-height: 100vh;
+    background-color: #fff;
+    border-right: 1px solid #e2e2e2;
+    font-size: max(1vw, 10px);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+}
 
-width: 18%;
-min-height: 100vh;
-border: 1.5px solid #a9a9a9;
-border-top: 0;
-font-size: max(1vw,10px);
+.sidebar-options {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
-.sidebar-options{
-padding-top: 50px;
- padding-left: 20%; 
- display: flex;
-flex-direction: column;
-gap: 20px;
-}
+
 .sidebar-option {
     display: flex;
     align-items: center;
-    gap: 12px;
-    border: 1px solid #a9a9a9;
-    border-radius: 0;
-    padding: 8px 10px;
-    border-radius: 3px 0px 0px 3px;
+    gap: 14px;
+    padding: 14px 20px;
+    border-radius: 12px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    color: #747474;
+    text-decoration: none;
+    border: 2px solid transparent;
+    background-color: #fff;
 }
-.sidebar-option.active{
-    background-color: #fff0ed;
+
+.sidebar-option:hover {
+    background-color: #fff5f3;
+    color: tomato;
+    transform: translateX(4px);
+    border-color: #ffe0db;
+}
+
+.sidebar-option.active {
+    background-color: tomato;
+    color: white;
     border-color: tomato;
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.3);
 }
-@media (max-width:900px) {
-    .sidebar-option p{
+
+.sidebar-option.active:hover {
+    background-color: #ff5238;
+    transform: translateX(4px);
+    border-color: #ff5238;
+}
+
+.sidebar-icon {
+    font-size: 20px;
+    min-width: 20px;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-option:hover .sidebar-icon {
+    transform: scale(1.1);
+}
+
+.sidebar-option p {
+    margin: 0;
+    font-weight: 500;
+    font-size: max(1vw, 14px);
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .sidebar-option p {
         display: none;
+    }
+    .sidebar-option {
+        justify-content: center;
+        padding: 14px;
+    }
+    .sidebar {
+        width: 80px;
     }
 }

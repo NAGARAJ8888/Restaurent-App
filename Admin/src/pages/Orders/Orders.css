@@ -1,56 +1,191 @@
-.order-item{
+.order {
+    width: 70%;
+    margin-left: max(5vw, 25px);
+    margin-top: 50px;
+    color: #262626;
+    font-size: 16px;
+}
+
+.order h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #262626;
+    margin-bottom: 30px;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-item {
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
     align-items: start;
     gap: 30px;
-    border: 1px solid tomato;
-    padding: 20px;
-    margin: 30px 0px;
+    border: 2px solid #e2e2e2;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: #fff;
     font-size: 14px;
-    color: #505050;
+    color: #262626;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-.order-item-food, .order-item-name{
+
+.order-item:hover {
+    border-color: tomato;
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.15);
+    transform: translateY(-2px);
+}
+
+.order-item-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.order-item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e2e2e2;
+    transition: all 0.2s ease;
+}
+
+.order-item-image:hover {
+    border-color: tomato;
+    transform: scale(1.05);
+}
+
+.order-item-image-more {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: #fff5f3;
+    border: 2px solid tomato;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: tomato;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.order-item > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.order-item-food,
+.order-item-name {
+    font-weight: 600;
+    color: #262626;
+    margin: 0;
+}
+
+.order-item-food {
+    font-size: 15px;
+    color: #262626;
+}
+
+.order-item-name {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.order-item-address {
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.order-item-address p {
+    margin: 0;
+    color: #747474;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.order-item-phone {
+    color: #747474;
+    font-size: 13px;
+    margin: 0;
+}
+
+.order-item > p {
+    margin: 0;
+    color: #262626;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.order-item > p:nth-of-type(1) {
+    color: #747474;
+    font-size: 13px;
+}
+
+.order-item > p:nth-of-type(2) {
+    color: tomato;
+    font-size: 18px;
     font-weight: 600;
 }
-.order-item-name{
-    margin-top: 30px;
-    margin-bottom: 5px;
-}
-.order-item-address{
-    margin-bottom: 10px;
-}
-.order-item select{
-    background-color: #ffe8e4;
-    border: 1px solid tomato;
-    width: max(11vw,120px);
-    padding: 10px;
+
+.order-item select {
+    background-color: #fff;
+    border: 2px solid #e2e2e2;
+    width: max(11vw, 140px);
+    padding: 10px 14px;
     outline: none;
-}
-/*
-:root .order-item select{
-    background-color: black;
-    color: white;
-    border: 1px solid tomato;
-}
-
-.lightcolors .order-item select{
-    background-color: #ffe8e4;
-    color: black;
-    border: 1px solid tomato;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #262626;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Outfit;
+    font-weight: 500;
 }
 
-*/
-@media (max-width:1000px) {
-    .order-item{
+.order-item select:hover {
+    border-color: tomato;
+    background-color: #fff5f3;
+}
+
+.order-item select:focus {
+    border-color: tomato;
+    box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.1);
+}
+
+@media (max-width: 1000px) {
+    .order-item {
         font-size: 12px;
         grid-template-columns: 0.5fr 2fr 1fr;
-        padding: 15px 8px;
+        padding: 18px;
+        gap: 20px;
     }
-    .order-item select{
-        padding: 5px;
+
+    .order-item select {
+        padding: 8px 12px;
         font-size: 12px;
+        width: 100%;
     }
-    .order-item img{
-        width: 40px;
+
+    .order-item-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .order-item-image-more {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
     }
 }

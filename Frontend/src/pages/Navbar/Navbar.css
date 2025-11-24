@@ -13,13 +13,18 @@
 
 .navbar .logo {
     width: 150px;
+    filter: brightness(0) invert(1);
 }
 .navbar-menu{
     display: flex;
     list-style: none;
     gap: 20px;
-    color: tomato;
+    color: white;
     font-size: 18px;
+}
+.navbar-menu a{
+    color: white;
+    text-decoration: none;
 }
 .navbar-right{
     display: flex;
@@ -29,19 +34,20 @@
 .navbar button{
     background: transparent;
     font-size: 16px;
-    color: tomato;
-    border: 1px solid tomato;
+    color: white;
+    border: 1px solid white;
     padding: 10px 30px;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
 }
 .navbar button:hover{
-    background-color: tomato;
+    background-color: white;
+    color: #747474;
 }
 .navbar .active{
     padding-bottom: 2px;
-    border-bottom: 2px solid tomato;
+    border-bottom: 2px solid white;
 }
 .navbar li{
     cursor: pointer;
@@ -51,7 +57,7 @@
 }
 
 .react-icon{
-    color: tomato;
+    color: white;
     font-size: 2rem;
     cursor: pointer;
 }
@@ -73,32 +79,53 @@
     position: absolute;
     display: none;
     right: 0;
-    z-index: 1;
+    top: 100%;
+    margin-top: 10px;
+    z-index: 1000;
+    min-width: 150px;
 }
-.navbar-profile:hover .nav-profile-dropdown{
-display: flex;
-flex-direction: column;
-gap: 10px;
-background-color: #fff;
-padding: 12px 25px;
-border-radius: 4px;
-border: 1px solid tomato;
-outline: 2px solid tomato;
-list-style: none;
+.nav-profile-dropdown.show{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: #fff;
+    padding: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    list-style: none;
 }
 .nav-profile-dropdown li{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     cursor: pointer;
-
-}
-
-.nav-profile-dropdown img {
-    width: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.2s ease;
+    margin: 0;
 }
 .nav-profile-dropdown li:hover{
+    background-color: #f5f5f5;
+}
+.nav-profile-dropdown li p{
+    margin: 0;
+    color: #262626;
+    font-size: 14px;
+    font-weight: 500;
+}
+.nav-profile-dropdown li:hover p{
     color: tomato;
+}
+.nav-profile-dropdown img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+.nav-profile-dropdown hr{
+    margin: 4px 0;
+    border: none;
+    border-top: 1px solid #e2e2e2;
+    width: 100%;
 }
 
 .react-icon{
@@ -106,9 +133,39 @@ list-style: none;
 }
 
 .profile-icon {
-  filter: brightness(5) saturate(100%) invert(50%) sepia(98%) saturate(670%) hue-rotate(339deg) brightness(93%) contrast(98%);
+  filter: brightness(0) invert(1);
 }
 
+/* Cart page navbar styles - dark colors for visibility on white background */
+.navbar-cart {
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.navbar-cart .logo {
+    filter: none;
+}
+.navbar-cart .navbar-menu,
+.navbar-cart .navbar-menu a {
+    color: #262626;
+}
+.navbar-cart .react-icon {
+    color: tomato;
+}
+.navbar-cart .navbar button {
+    color: tomato;
+    border: 1px solid tomato;
+}
+.navbar-cart .navbar button:hover {
+    background-color: tomato;
+    color: white;
+}
+.navbar-cart .navbar .active {
+    border-bottom: 2px solid tomato;
+}
+.navbar-cart .profile-icon {
+    filter: none;
+}
 
 @media (max-width:1050px) {
     .navbar .logo{

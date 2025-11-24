@@ -1,27 +1,106 @@
-.list-table-format{
+.list {
+    width: 70%;
+    margin-left: max(5vw, 25px);
+    margin-top: 50px;
+    color: #262626;
+    font-size: 16px;
+}
+
+.list > p {
+    font-size: 24px;
+    font-weight: 600;
+    color: #262626;
+    margin-bottom: 30px;
+}
+
+.list-table {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.list-table-format {
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
     align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    border: 1px solid #cacaca;
-    font-size: 13px;
+    gap: 15px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
 }
-.list-table-format.title{
+
+.list-table-format:last-child {
+    border-bottom: none;
+}
+
+.list-table-format:hover:not(.title) {
+    background-color: #fff5f3;
+}
+
+.list-table-format.title {
     background-color: #f9f9f9;
+    font-weight: 600;
+    color: #262626;
+    border-bottom: 2px solid #e2e2e2;
 }
-.list-table-format img{
-    width: 50px;
+
+.list-table-format.title b {
+    color: #262626;
+    font-weight: 600;
 }
-.cursor{
+
+.list-table-format img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e2e2e2;
+}
+
+.list-table-format p {
+    margin: 0;
+    color: #262626;
+}
+
+.delete-btn {
+    color: tomato;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffe8e4;
+    margin: 0 auto;
+}
+
+.delete-btn:hover {
+    background-color: tomato;
+    color: white;
+    transform: scale(1.1);
+}
+
+.cursor {
     cursor: pointer;
 }
-@media (max-width:600px) {
-    .list-table-format{
+
+@media (max-width: 600px) {
+    .list-table-format {
         grid-template-columns: 1fr 3fr 1fr;
         gap: 15px;
     }
-    .list-table-format.title{
+
+    .list-table-format.title {
         display: none;
+    }
+
+    .list-table-format img {
+        width: 50px;
+        height: 50px;
     }
 }

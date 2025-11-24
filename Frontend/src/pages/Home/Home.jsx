@@ -7,7 +7,7 @@ import AppDownload from '../../components/AppDownload/AppDownload';
 
 const Home = () => {
 
-  const [category,setCategory]=useState("All");
+  const [category,setCategory]=useState("Salad");
   return (
     <div>
       <div className="home-wrapper"><Header/></div>

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017";
+const MONGODB_URL = process.env.MONGODB_URL;
 
 
 export const connectDB = async () => {
-    await mongoose.connect(`${MONGODB_URL}/food-del`).then(()=>console.log("DB Connected"));
+    await mongoose.connect(MONGODB_URL).then(()=>console.log("DB Connected"));
 }

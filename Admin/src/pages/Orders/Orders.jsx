@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './Orders.css'
 import {toast} from "react-toastify"
 import axios from "axios"
-import {assets} from "../../assets/assets"
 
 
 
@@ -42,7 +41,19 @@ const Orders = ({url}) => {
     <div className="order-list">
       {orders.map((order,index)=>(
         <div key={index} className='order-item'>
-          <img src={assets.parcel_icon} alt="" />
+          <div className="order-item-images">
+            {order.items.slice(0, 3).map((item, itemIndex) => (
+              <img 
+                key={itemIndex} 
+                src={`${url}/images/` + item.image} 
+                alt={item.name}
+                className="order-item-image"
+              />
+            ))}
+            {order.items.length > 3 && (
+              <div className="order-item-image-more">+{order.items.length - 3}</div>
+            )}
+          </div>
           <div>
             <p className='order-item-food'>
               {order.items.map((item,index)=>{

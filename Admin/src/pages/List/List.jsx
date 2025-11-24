@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './List.css'
 import axios from "axios"
 import {toast} from "react-toastify"
+import { FaTrash } from 'react-icons/fa'
 const List = ({url}) => {
 
 
@@ -53,7 +54,9 @@ const List = ({url}) => {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>${item.price}</p>
-              <p onClick={()=>removeFood(item._id)} className='cursor'>X</p>
+              <div onClick={()=>removeFood(item._id)} className='cursor delete-btn'>
+                <FaTrash />
+              </div>
               </div>
           )
         })}

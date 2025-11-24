@@ -1,12 +1,33 @@
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 4px;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-.navbar .logo{
-    width: max(10%,80px);
+
+.navbar .logo {
+    width: max(10%, 80px);
+    height: auto;
 }
-.navbar .profile{
+
+.navbar .profile {
     width: 40px;
+    height: 40px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #333;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.navbar .profile:hover {
+    border-color: tomato;
+    color: tomato;
+    transform: scale(1.05);
 }
