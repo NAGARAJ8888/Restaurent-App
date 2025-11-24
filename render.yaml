@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: restaurant-backend
+    env: node
+    plan: free
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: MONGODB_URI
+        sync: false
+      - key: FRONTEND_URL_PROD
+        sync: false
+      - key: ADMIN_URL_PROD
+        sync: false
+
